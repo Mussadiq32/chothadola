@@ -134,7 +134,7 @@ const PropertyDetails = () => {
             <div className="text-center">
               <h1 className="text-2xl font-semibold text-red-700 mb-4">Error Loading Property</h1>
               <p className="text-royal-600 mb-6">{error}</p>
-              <CustomButton onClick={() => navigate('/properties')}>
+              <CustomButton onClick={() => window.open('/properties', '_blank')}>
                 Back to Properties
               </CustomButton>
             </div>
@@ -154,7 +154,7 @@ const PropertyDetails = () => {
             <div className="text-center">
               <h1 className="text-2xl font-semibold text-royal-800 mb-4">Property Not Found</h1>
               <p className="text-royal-600 mb-6">The property you're looking for doesn't exist or has been removed.</p>
-              <CustomButton onClick={() => navigate('/properties')}>
+              <CustomButton onClick={() => window.open('/properties', '_blank')}>
                 Back to Properties
               </CustomButton>
             </div>
@@ -175,7 +175,7 @@ const PropertyDetails = () => {
             <CustomButton 
               variant="outline" 
               icon={<ArrowLeft size={18} />}
-              onClick={() => navigate('/properties')}
+              onClick={() => window.open('/properties', '_blank')}
             >
               Back to Properties
             </CustomButton>
