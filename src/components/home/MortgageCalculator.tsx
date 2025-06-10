@@ -76,31 +76,31 @@ const MortgageCalculator = () => {
   return (
     <section className="section-padding bg-white">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 bg-gold-100 text-gold-600 text-sm font-medium rounded-full mb-4 animate-fade-up">
+        <div className="text-center mb-12 lg:mb-16">
+          <div className="inline-block px-3 py-1 bg-gold-100 text-gold-600 text-xs lg:text-sm font-medium rounded-full mb-4 animate-fade-up">
             Mortgage Calculator
           </div>
-          <h2 className="heading-lg text-royal-800 mb-6 animate-fade-up animate-delay-100">
+          <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-royal-800 mb-4 lg:mb-6 animate-fade-up animate-delay-100">
             Plan Your <span className="text-gradient">Investment</span>
           </h2>
-          <p className="text-royal-600 animate-fade-up animate-delay-200 max-w-2xl mx-auto">
+          <p className="text-royal-600 animate-fade-up animate-delay-200 max-w-2xl mx-auto text-sm lg:text-base">
             Use our mortgage calculator to estimate your monthly payments and see how much you can afford.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Calculator Inputs */}
-          <Card className="p-6 space-y-8">
-            <div className="space-y-4">
+          <Card className="p-4 lg:p-6 space-y-6 lg:space-y-8">
+            <div className="space-y-4 lg:space-y-4">
               <label className="block">
-                <span className="text-royal-800 font-medium mb-2 block">Loan Amount</span>
-                <div className="flex items-center space-x-4">
-                  <IndianRupee className="text-gold-500" size={20} />
+                <span className="text-royal-800 font-medium mb-2 block text-sm lg:text-base">Loan Amount</span>
+                <div className="flex items-center space-x-3 lg:space-x-4">
+                  <IndianRupee className="text-gold-500 w-4 h-4 lg:w-5 lg:h-5" />
                   <Input
                     type="number"
                     value={values.loanAmount}
                     onChange={(e) => handleInputChange('loanAmount', Number(e.target.value))}
-                    className="flex-1"
+                    className="flex-1 text-sm lg:text-base"
                   />
                 </div>
                 <Slider
@@ -114,14 +114,14 @@ const MortgageCalculator = () => {
               </label>
 
               <label className="block">
-                <span className="text-royal-800 font-medium mb-2 block">Interest Rate (%)</span>
-                <div className="flex items-center space-x-4">
-                  <Percent className="text-gold-500" size={20} />
+                <span className="text-royal-800 font-medium mb-2 block text-sm lg:text-base">Interest Rate (%)</span>
+                <div className="flex items-center space-x-3 lg:space-x-4">
+                  <Percent className="text-gold-500 w-4 h-4 lg:w-5 lg:h-5" />
                   <Input
                     type="number"
                     value={values.interestRate}
                     onChange={(e) => handleInputChange('interestRate', Number(e.target.value))}
-                    className="flex-1"
+                    className="flex-1 text-sm lg:text-base"
                     step="0.1"
                   />
                 </div>
@@ -136,14 +136,14 @@ const MortgageCalculator = () => {
               </label>
 
               <label className="block">
-                <span className="text-royal-800 font-medium mb-2 block">Loan Term (Years)</span>
-                <div className="flex items-center space-x-4">
-                  <Calendar className="text-gold-500" size={20} />
+                <span className="text-royal-800 font-medium mb-2 block text-sm lg:text-base">Loan Term (Years)</span>
+                <div className="flex items-center space-x-3 lg:space-x-4">
+                  <Calendar className="text-gold-500 w-4 h-4 lg:w-5 lg:h-5" />
                   <Input
                     type="number"
                     value={values.loanTerm}
                     onChange={(e) => handleInputChange('loanTerm', Number(e.target.value))}
-                    className="flex-1"
+                    className="flex-1 text-sm lg:text-base"
                   />
                 </div>
                 <Slider
@@ -157,14 +157,14 @@ const MortgageCalculator = () => {
               </label>
 
               <label className="block">
-                <span className="text-royal-800 font-medium mb-2 block">Down Payment (%)</span>
-                <div className="flex items-center space-x-4">
-                  <Percent className="text-gold-500" size={20} />
+                <span className="text-royal-800 font-medium mb-2 block text-sm lg:text-base">Down Payment (%)</span>
+                <div className="flex items-center space-x-3 lg:space-x-4">
+                  <Percent className="text-gold-500 w-4 h-4 lg:w-5 lg:h-5" />
                   <Input
                     type="number"
                     value={values.downPayment}
                     onChange={(e) => handleInputChange('downPayment', Number(e.target.value))}
-                    className="flex-1"
+                    className="flex-1 text-sm lg:text-base"
                   />
                 </div>
                 <Slider
@@ -180,51 +180,51 @@ const MortgageCalculator = () => {
           </Card>
 
           {/* Results Display */}
-          <div className="space-y-6">
+          <div className="space-y-4 lg:space-y-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-gradient-to-br from-royal-50 to-royal-100 p-8 rounded-lg border border-royal-200"
+              className="bg-gradient-to-br from-royal-50 to-royal-100 p-4 lg:p-8 rounded-lg border border-royal-200"
             >
-              <div className="flex items-center mb-6">
-                <Calculator className="text-gold-500 mr-3" size={24} />
-                <h3 className="text-xl font-semibold text-royal-800">Payment Summary</h3>
+              <div className="flex items-center mb-4 lg:mb-6">
+                <Calculator className="text-gold-500 mr-2 lg:mr-3 w-5 h-5 lg:w-6 lg:h-6" />
+                <h3 className="text-lg lg:text-xl font-semibold text-royal-800">Payment Summary</h3>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <p className="text-royal-600 mb-2">Monthly Payment</p>
-                  <p className="text-3xl font-bold text-royal-800">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+                <div className="bg-white p-3 lg:p-6 rounded-lg shadow-sm">
+                  <p className="text-royal-600 mb-2 text-xs lg:text-sm">Monthly Payment</p>
+                  <p className="text-xl lg:text-3xl font-bold text-royal-800 leading-tight">
                     {formatCurrency(monthlyPayment)}
                   </p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <p className="text-royal-600 mb-2">Down Payment</p>
-                  <p className="text-3xl font-bold text-royal-800">
+                <div className="bg-white p-3 lg:p-6 rounded-lg shadow-sm">
+                  <p className="text-royal-600 mb-2 text-xs lg:text-sm">Down Payment</p>
+                  <p className="text-xl lg:text-3xl font-bold text-royal-800 leading-tight">
                     {formatCurrency(values.loanAmount * (values.downPayment / 100))}
                   </p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <p className="text-royal-600 mb-2">Total Interest</p>
-                  <p className="text-3xl font-bold text-royal-800">
+                <div className="bg-white p-3 lg:p-6 rounded-lg shadow-sm">
+                  <p className="text-royal-600 mb-2 text-xs lg:text-sm">Total Interest</p>
+                  <p className="text-xl lg:text-3xl font-bold text-royal-800 leading-tight">
                     {formatCurrency(totalInterest)}
                   </p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <p className="text-royal-600 mb-2">Total Payment</p>
-                  <p className="text-3xl font-bold text-royal-800">
+                <div className="bg-white p-3 lg:p-6 rounded-lg shadow-sm">
+                  <p className="text-royal-600 mb-2 text-xs lg:text-sm">Total Payment</p>
+                  <p className="text-xl lg:text-3xl font-bold text-royal-800 leading-tight">
                     {formatCurrency(totalPayment)}
                   </p>
                 </div>
               </div>
             </motion.div>
 
-            <div className="bg-royal-50 p-6 rounded-lg border border-royal-100">
-              <p className="text-sm text-royal-600">
+            <div className="bg-royal-50 p-4 lg:p-6 rounded-lg border border-royal-100">
+              <p className="text-xs lg:text-sm text-royal-600">
                 This calculator provides estimates for your monthly mortgage payments. The actual
                 amount may vary based on additional factors such as property taxes, insurance, and
                 other fees. Please consult with our financial advisors for a detailed analysis.
