@@ -53,7 +53,7 @@ const CityCard = ({
   return (
     <motion.div 
       className={cn(
-        "relative rounded-lg overflow-hidden cursor-pointer group h-80",
+        "relative rounded-lg overflow-hidden cursor-pointer group h-48 sm:h-64 md:h-80",
         isActive ? "shadow-2xl z-10" : "shadow-lg",
         className
       )}
@@ -85,14 +85,14 @@ const CityCard = ({
       </motion.div>
       
       <motion.div 
-        className="absolute bottom-0 left-0 right-0 p-6"
+        className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <motion.h3
           className={cn(
-            "font-display text-2xl font-semibold text-white mb-3",
+            "font-display text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-3",
             "transform transition-transform duration-500"
           )}
           animate={{ y: isActive ? 0 : 10 }}
@@ -100,17 +100,17 @@ const CityCard = ({
           {name}
         </motion.h3>
         <motion.div
-          className="flex items-center text-white/90 space-x-4"
+          className="flex flex-col sm:flex-row sm:items-center text-white/90 space-y-2 sm:space-y-0 sm:space-x-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.3 }}
         >
           <div className="flex items-center">
-            <MapPin size={16} className="mr-2" />
-            <span className="font-medium">{animatedProperties} Properties</span>
+            <MapPin size={14} className="sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+            <span className="font-medium text-sm sm:text-base">{animatedProperties} Properties</span>
           </div>
           <motion.button
-            className="px-4 py-2 bg-gold-500/90 hover:bg-gold-500 rounded-full text-sm font-medium transition-colors duration-300"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gold-500/90 hover:bg-gold-500 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300 w-fit"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -243,9 +243,9 @@ const CitiesSection = () => {
     return (
       <section className="section-padding">
         <div className="container mx-auto">
-          <div className="text-center py-20">
-            <div className="w-16 h-16 border-4 border-gold-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
-            <p className="mt-4 text-royal-600">Loading cities...</p>
+          <div className="text-center py-12 sm:py-20">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 border-4 border-gold-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <p className="mt-3 sm:mt-4 text-royal-600 text-sm sm:text-base">Loading cities...</p>
           </div>
         </div>
       </section>
@@ -260,9 +260,9 @@ const CitiesSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16">
           <motion.div 
-            className="inline-block px-3 py-1 bg-gold-100 text-gold-600 text-sm font-medium rounded-full mb-4"
+            className="inline-block px-2 sm:px-3 py-1 sm:py-1 bg-gold-100 text-gold-600 text-xs sm:text-sm font-medium rounded-full mb-3 sm:mb-4"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3 }}
@@ -270,7 +270,7 @@ const CitiesSection = () => {
             Our Locations
           </motion.div>
           <motion.h2 
-            className="heading-lg text-royal-800 mb-6"
+            className="heading-lg text-royal-800 mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -278,7 +278,7 @@ const CitiesSection = () => {
             Explore Properties Across <span className="text-gradient">Major Cities</span>
           </motion.h2>
           <motion.p 
-            className="text-royal-600"
+            className="text-royal-600 text-sm sm:text-base"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -288,7 +288,7 @@ const CitiesSection = () => {
         </div>
         
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
