@@ -68,7 +68,6 @@ const Navbar = () => {
     document.body.style.overflow = 'auto';
   };
 
-  // No more dropdown toggles for mobile, as we are prioritizing scrollable content
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -78,13 +77,13 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed w-full z-[9999] transition-all duration-300 backdrop-blur-sm ${isScrolled ? 'bg-white/90 dark:bg-royal-900/90 shadow-lg py-4' : 'bg-transparent py-6'}`}>
+    <header className={`fixed w-full z-[9999] transition-all duration-300 backdrop-blur-sm ${isScrolled ? 'bg-white/90 dark:bg-royal-900/90 shadow-lg py-2 sm:py-4' : 'bg-transparent py-4 sm:py-6'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center transition-transform hover:scale-105">
           <img 
             src={isScrolled ? "https://iili.io/2mPx3rP.png" : "https://iili.io/2mPxFWb.png"} 
             alt="Royal Group of Real Estates Logo" 
-            className="h-10 md:h-12"
+            className="h-8 sm:h-10 md:h-12"
           />
         </Link>
         
@@ -109,7 +108,7 @@ const Navbar = () => {
               Services
               <ChevronDown size={16} className="ml-1 transition-transform duration-300 group-hover:rotate-180" />
             </button>
-            {isDropdownOpen && !isMobileMenuOpen && ( // Hide desktop dropdown when mobile menu is open
+            {isDropdownOpen && !isMobileMenuOpen && (
               <div className="absolute top-full left-0 mt-2 w-48 bg-white/95 dark:bg-royal-900/95 backdrop-blur-sm rounded-lg shadow-xl py-2 z-[1000] animate-in fade-in-0 zoom-in-95 duration-200">
                 <Link 
                   to="/services/buying" 
@@ -146,7 +145,7 @@ const Navbar = () => {
               Tools
               <ChevronDown size={16} className="ml-1 transition-transform duration-300 group-hover:rotate-180" />
             </button>
-            {isToolsDropdownOpen && !isMobileMenuOpen && ( // Hide desktop dropdown when mobile menu is open
+            {isToolsDropdownOpen && !isMobileMenuOpen && (
               <div className="absolute top-full left-0 mt-2 w-48 bg-white/95 dark:bg-royal-900/95 backdrop-blur-sm rounded-lg shadow-xl py-2 z-[1000] animate-in fade-in-0 zoom-in-95 duration-200">
                 <a 
                   href="https://www.99acres.com/property-rates-and-price-trends-prffid"
@@ -190,7 +189,7 @@ const Navbar = () => {
           )}
         </nav>
         
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 sm:space-x-4">
           <a 
             href="tel:7006064587" 
             className={cn(
@@ -208,7 +207,10 @@ const Navbar = () => {
             <CustomButton 
               variant={isScrolled ? "primary" : "outline"} 
               size="sm"
-              className={!isScrolled ? "border-white text-white hover:bg-white hover:text-royal-800 transition-transform hover:scale-105" : "transition-transform hover:scale-105"}
+              className={cn(
+                "text-xs sm:text-sm px-3 sm:px-4 py-2",
+                !isScrolled ? "border-white text-white hover:bg-white hover:text-royal-800 transition-transform hover:scale-105" : "transition-transform hover:scale-105"
+              )}
             >
               {isAuthenticated ? 'Dashboard' : 'Sign In'}
             </CustomButton>
@@ -216,26 +218,26 @@ const Navbar = () => {
           
           {/* HAMBURGER MENU BUTTON */}
           <button 
-            className="lg:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-white/90 dark:bg-royal-800/90 backdrop-blur-sm shadow-lg text-gray-700 dark:text-white transition-all duration-300 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-gold-300"
+            className="lg:hidden flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/90 dark:bg-royal-800/90 backdrop-blur-sm shadow-lg text-gray-700 dark:text-white transition-all duration-300 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-gold-300"
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
           >
-            <div className="relative w-6 h-6">
+            <div className="relative w-5 h-5 sm:w-6 sm:h-6">
               {/* Top line */}
               <span className={cn(
-                "absolute left-0 w-6 h-0.5 bg-current transition-all duration-300 ease-in-out",
-                isMobileMenuOpen ? "rotate-45 top-3" : "top-1"
+                "absolute left-0 w-5 h-0.5 sm:w-6 sm:h-0.5 bg-current transition-all duration-300 ease-in-out",
+                isMobileMenuOpen ? "rotate-45 top-2.5 sm:top-3" : "top-0.5 sm:top-1"
               )} />
               {/* Middle line */}
               <span className={cn(
-                "absolute left-0 w-6 h-0.5 bg-current transition-all duration-300 ease-in-out top-3",
+                "absolute left-0 w-5 h-0.5 sm:w-6 sm:h-0.5 bg-current transition-all duration-300 ease-in-out top-2.5 sm:top-3",
                 isMobileMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
               )} />
               {/* Bottom line */}
               <span className={cn(
-                "absolute left-0 w-6 h-0.5 bg-current transition-all duration-300 ease-in-out",
-                isMobileMenuOpen ? "-rotate-45 top-3" : "top-5"
+                "absolute left-0 w-5 h-0.5 sm:w-6 sm:h-0.5 bg-current transition-all duration-300 ease-in-out",
+                isMobileMenuOpen ? "-rotate-45 top-2.5 sm:top-3" : "top-4.5 sm:top-5"
               )} />
             </div>
           </button>
@@ -257,151 +259,143 @@ const Navbar = () => {
         
         {/* Menu Container */}
         <div className={cn(
-          "mobile-menu-container fixed inset-0 flex items-center justify-center transition-all duration-500 ease-in-out",
+          "mobile-menu-container fixed inset-0 flex items-center justify-center transition-all duration-500 ease-in-out p-4",
           isMobileMenuOpen ? "scale-100 opacity-100" : "scale-75 opacity-0"
         )}>
-          {/* Central Hub */}
-          <div className="relative w-80 h-80">
-            {/* User Profile Center */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative group cursor-pointer" onClick={closeMobileMenu}>
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-gold-400 via-royal-500 to-gold-600 flex items-center justify-center text-white font-bold text-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-gold-500/25">
-                  {user ? user.name?.charAt(0).toUpperCase() : 'G'}
+          {/* Simplified Mobile Menu */}
+          <div className="w-full max-w-sm bg-white/95 dark:bg-royal-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 dark:border-royal-700/50 overflow-hidden">
+            {/* Header */}
+            <div className="p-6 border-b border-white/10 dark:border-royal-700/30">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 via-royal-500 to-gold-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                    {user ? user.name?.charAt(0).toUpperCase() : 'G'}
+                  </div>
+                  <div>
+                    <p className="text-royal-800 dark:text-white font-semibold text-sm">
+                      {user ? user.name : 'Guest'}
+                    </p>
+                    <p className="text-royal-500 dark:text-royal-300 text-xs">
+                      {isAuthenticated ? 'Welcome back!' : 'Sign in to continue'}
+                    </p>
+                  </div>
                 </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white dark:bg-royal-800 px-3 py-1 rounded-full shadow-lg text-xs font-medium text-gray-700 dark:text-white whitespace-nowrap">
-                  {user ? user.name : 'Guest'}
-                </div>
+                <button
+                  onClick={closeMobileMenu}
+                  className="p-2 rounded-lg bg-royal-100 dark:bg-royal-800 text-royal-600 dark:text-royal-300 hover:bg-royal-200 dark:hover:bg-royal-700 transition-colors"
+                >
+                  <X size={20} />
+                </button>
               </div>
             </div>
 
-            {/* Orbital Menu Items */}
-            {menuItems.map((item, index) => {
-              const Icon = item.icon;
-              const angle = (index * 360) / menuItems.length;
-              const radius = 120;
-              const x = Math.cos((angle - 90) * Math.PI / 180) * radius;
-              const y = Math.sin((angle - 90) * Math.PI / 180) * radius;
-              
-              return (
-                <div
-                  key={item.name}
-                  className="absolute w-16 h-16 transition-all duration-700 ease-out"
-                  style={{
-                    left: `calc(50% + ${x}px - 32px)`,
-                    top: `calc(50% + ${y}px - 32px)`,
-                    transform: isMobileMenuOpen ? 'scale(1)' : 'scale(0)',
-                    transitionDelay: `${index * 100}ms`
-                  }}
-                >
+            {/* Menu Items */}
+            <div className="p-4 space-y-2">
+              {/* Main Navigation */}
+              <div className="space-y-1">
+                <h3 className="text-xs font-semibold text-royal-500 dark:text-royal-300 uppercase tracking-wider px-3 py-2">
+                  Navigation
+                </h3>
+                {menuItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      className="flex items-center space-x-3 px-3 py-3 rounded-xl text-royal-700 dark:text-royal-100 hover:bg-gold-50 dark:hover:bg-royal-800/50 hover:text-gold-600 dark:hover:text-gold-400 transition-all duration-300"
+                      onClick={closeMobileMenu}
+                    >
+                      <div className="p-2 bg-gradient-to-r from-gold-400 to-gold-600 rounded-lg">
+                        <Icon size={18} className="text-white" />
+                      </div>
+                      <span className="font-medium">{item.name}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+
+              {/* Services */}
+              <div className="space-y-1 pt-2">
+                <h3 className="text-xs font-semibold text-royal-500 dark:text-royal-300 uppercase tracking-wider px-3 py-2">
+                  Services
+                </h3>
+                {serviceItems.map((item) => (
                   <Link
+                    key={item.name}
                     to={item.path}
-                    className="w-full h-full rounded-full bg-white/90 dark:bg-royal-800/90 backdrop-blur-sm border border-white/20 dark:border-royal-600/20 flex items-center justify-center shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 group"
+                    className="flex items-center space-x-3 px-3 py-3 rounded-xl text-royal-700 dark:text-royal-100 hover:bg-gold-50 dark:hover:bg-royal-800/50 hover:text-gold-600 dark:hover:text-gold-400 transition-all duration-300"
                     onClick={closeMobileMenu}
                   >
-                    <Icon size={24} className="text-royal-600 dark:text-gold-400 group-hover:text-gold-500 dark:group-hover:text-gold-300 transition-colors duration-300" />
+                    <div className="p-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg">
+                      <Briefcase size={18} className="text-white" />
+                    </div>
+                    <span className="font-medium text-sm">{item.name}</span>
                   </Link>
-                </div>
-              );
-            })}
+                ))}
+              </div>
 
-            {/* Outer Ring - Services */}
-            {serviceItems.map((item, index) => {
-              const angle = (index * 360) / serviceItems.length;
-              const radius = 180;
-              const x = Math.cos((angle - 90) * Math.PI / 180) * radius;
-              const y = Math.sin((angle - 90) * Math.PI / 180) * radius;
-              
-              return (
-                <div
-                  key={item.name}
-                  className="absolute w-20 h-20 transition-all duration-700 ease-out"
-                  style={{
-                    left: `calc(50% + ${x}px - 40px)`,
-                    top: `calc(50% + ${y}px - 40px)`,
-                    transform: isMobileMenuOpen ? 'scale(1)' : 'scale(0)',
-                    transitionDelay: `${(index + menuItems.length) * 100}ms`
-                  }}
-                >
-                  <Link
-                    to={item.path}
-                    className="w-full h-full rounded-2xl bg-gradient-to-br from-gold-400/80 to-royal-500/80 backdrop-blur-sm border border-gold-300/30 dark:border-royal-400/30 flex items-center justify-center shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 group"
-                    onClick={closeMobileMenu}
-                  >
-                    <span className="text-xs font-bold text-white text-center px-1 leading-tight">{item.name}</span>
-                  </Link>
-                </div>
-              );
-            })}
-
-            {/* Tools Ring - External Links */}
-            {toolItems.map((item, index) => {
-              const angle = (index * 360) / toolItems.length;
-              const radius = 240;
-              const x = Math.cos((angle - 90) * Math.PI / 180) * radius;
-              const y = Math.sin((angle - 90) * Math.PI / 180) * radius;
-              
-              return (
-                <div
-                  key={item.name}
-                  className="absolute w-16 h-16 transition-all duration-700 ease-out"
-                  style={{
-                    left: `calc(50% + ${x}px - 32px)`,
-                    top: `calc(50% + ${y}px - 32px)`,
-                    transform: isMobileMenuOpen ? 'scale(1)' : 'scale(0)',
-                    transitionDelay: `${(index + menuItems.length + serviceItems.length) * 100}ms`
-                  }}
-                >
+              {/* Tools */}
+              <div className="space-y-1 pt-2">
+                <h3 className="text-xs font-semibold text-royal-500 dark:text-royal-300 uppercase tracking-wider px-3 py-2">
+                  Tools
+                </h3>
+                {toolItems.map((item) => (
                   <a
+                    key={item.name}
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full h-full rounded-full bg-gradient-to-br from-royal-500/80 to-royal-600/80 backdrop-blur-sm border border-royal-400/30 flex items-center justify-center shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 group"
+                    className="flex items-center space-x-3 px-3 py-3 rounded-xl text-royal-700 dark:text-royal-100 hover:bg-gold-50 dark:hover:bg-royal-800/50 hover:text-gold-600 dark:hover:text-gold-400 transition-all duration-300"
                     onClick={closeMobileMenu}
                   >
-                    <span className="text-xs font-bold text-white text-center px-1 leading-tight">{item.name.split(' ')[0]}</span>
+                    <div className="p-2 bg-gradient-to-r from-purple-400 to-purple-600 rounded-lg">
+                      <Wrench size={18} className="text-white" />
+                    </div>
+                    <span className="font-medium text-sm">{item.name}</span>
                   </a>
-                </div>
-              );
-            })}
+                ))}
+              </div>
 
-            {/* Floating Action Buttons */}
-            <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-4">
-              <CustomButton 
-                variant="primary" 
-                className="w-32 h-12 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 text-white font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
-                onClick={closeMobileMenu}
-              >
-                {isAuthenticated ? 'Dashboard' : 'Sign In'}
-              </CustomButton>
+              {/* Admin Panel */}
+              {isAuthenticated && isAdmin && (
+                <div className="space-y-1 pt-2">
+                  <h3 className="text-xs font-semibold text-royal-500 dark:text-royal-300 uppercase tracking-wider px-3 py-2">
+                    Admin
+                  </h3>
+                  <Link
+                    to="/admin"
+                    className="flex items-center space-x-3 px-3 py-3 rounded-xl text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all duration-300"
+                    onClick={closeMobileMenu}
+                  >
+                    <div className="p-2 bg-gradient-to-r from-red-500 to-red-600 rounded-lg">
+                      <Settings size={18} className="text-white" />
+                    </div>
+                    <span className="font-medium text-sm">Admin Panel</span>
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Footer Actions */}
+            <div className="p-4 border-t border-white/10 dark:border-royal-700/30 space-y-3">
+              <Link to="/auth" onClick={closeMobileMenu}>
+                <CustomButton 
+                  variant="primary" 
+                  className="w-full bg-gradient-to-r from-gold-400 to-gold-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  {isAuthenticated ? 'Go to Dashboard' : 'Sign In / Register'}
+                </CustomButton>
+              </Link>
+              
               <a 
                 href="tel:7006064587" 
-                className="w-32 h-12 rounded-full bg-gradient-to-r from-royal-500 to-royal-700 text-white font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                className="flex items-center justify-center space-x-2 w-full bg-gradient-to-r from-royal-500 to-royal-700 text-white font-semibold py-3 px-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={closeMobileMenu}
               >
                 <Phone size={18} />
+                <span>Call Now</span>
               </a>
             </div>
-
-            {/* Admin Panel - Special Position */}
-            {isAuthenticated && isAdmin && (
-              <div
-                className="absolute w-16 h-16 transition-all duration-700 ease-out"
-                style={{
-                  left: 'calc(50% + 0px - 32px)',
-                  top: 'calc(50% + 140px - 32px)',
-                  transform: isMobileMenuOpen ? 'scale(1)' : 'scale(0)',
-                  transitionDelay: '800ms'
-                }}
-              >
-                <Link
-                  to="/admin"
-                  className="w-full h-full rounded-full bg-gradient-to-br from-red-500/80 to-red-600/80 backdrop-blur-sm border border-red-300/30 flex items-center justify-center shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 group"
-                  onClick={closeMobileMenu}
-                >
-                  <Settings size={24} className="text-white group-hover:text-red-100 transition-colors duration-300" />
-                </Link>
-              </div>
-            )}
           </div>
         </div>
       </div>
