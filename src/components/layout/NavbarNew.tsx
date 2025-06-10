@@ -250,4 +250,4 @@ const NavbarNew = () => {
   );
 };
 
-export default NavbarNew; 
+export default NavbarNew;
