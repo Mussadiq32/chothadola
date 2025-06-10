@@ -193,50 +193,50 @@ const Footer = () => {
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
           <motion.div 
             variants={itemVariants} 
-            className="backdrop-blur-lg bg-white/5 p-8 rounded-2xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:bg-white/10 relative overflow-hidden"
+            className="backdrop-blur-lg bg-white/5 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:bg-white/10 relative overflow-hidden"
           >
             {/* Floating Elements */}
-            <div className="absolute top-6 right-6 w-8 h-8 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full opacity-20 animate-pulse" />
-            <div className="absolute bottom-6 left-6 w-6 h-6 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.3s' }} />
-            <div className="absolute top-16 left-8 w-4 h-4 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full opacity-25 animate-pulse" style={{ animationDelay: '0.8s' }} />
+            <div className="absolute top-4 sm:top-6 right-4 sm:right-6 w-6 sm:w-8 h-6 sm:h-8 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full opacity-20 animate-pulse" />
+            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 w-4 sm:w-6 h-4 sm:h-6 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.3s' }} />
+            <div className="absolute top-12 sm:top-16 left-6 sm:left-8 w-3 sm:w-4 h-3 sm:h-4 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full opacity-25 animate-pulse" style={{ animationDelay: '0.8s' }} />
             
             <div className="relative z-10">
               {/* Enhanced Logo */}
               <motion.a 
                 href="/" 
-                className="flex items-center group mb-6"
+                className="flex items-center group mb-4 sm:mb-6"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="p-3 bg-gradient-to-r from-gold-400 to-gold-600 rounded-xl shadow-lg mr-4 group-hover:shadow-xl transition-all duration-300">
-                  <FaCrown size={24} className="text-white" />
+                <div className="p-2 sm:p-3 bg-gradient-to-r from-gold-400 to-gold-600 rounded-lg sm:rounded-xl shadow-lg mr-3 sm:mr-4 group-hover:shadow-xl transition-all duration-300">
+                  <FaCrown size={20} className="sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div>
-                  <span className="font-display text-3xl font-bold tracking-tight text-white group-hover:text-gold-400 transition-all duration-300">
+                  <span className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white group-hover:text-gold-400 transition-all duration-300">
                     Royal<span className="bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">Group</span>
                   </span>
                   <div className="flex items-center mt-1">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-2" />
+                    <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-green-400 rounded-full animate-pulse mr-1.5 sm:mr-2" />
                     <span className="text-xs text-royal-100/70">Premium Real Estate</span>
                   </div>
                 </div>
               </motion.a>
               
               {/* Company Description */}
-              <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 mb-6">
-                <div className="flex items-start space-x-3">
-                  <div className="p-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg">
-                    <FaBuilding size={16} className="text-white" />
+              <div className="bg-white/5 backdrop-blur-sm p-3 sm:p-4 rounded-lg sm:rounded-xl border border-white/10 mb-4 sm:mb-6">
+                <div className="flex items-start space-x-2 sm:space-x-3">
+                  <div className="p-1.5 sm:p-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg">
+                    <FaBuilding size={14} className="sm:w-4 sm:h-4 text-white" />
                   </div>
                   <div>
-                    <p className="text-royal-100/90 leading-relaxed text-sm">
+                    <p className="text-royal-100/90 leading-relaxed text-xs sm:text-sm">
                       Premium real estate solutions across India's major cities. Building excellence in real estate since 2012.
                     </p>
-                    <div className="flex items-center mt-2">
-                      <Star className="w-3 h-3 text-gold-400 mr-1" />
+                    <div className="flex items-center mt-1.5 sm:mt-2">
+                      <Star className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-gold-400 mr-1" />
                       <span className="text-xs text-royal-100/60">Trusted by 10,000+ clients</span>
                     </div>
                   </div>
@@ -244,27 +244,27 @@ const Footer = () => {
               </div>
               
               {/* Contact Information */}
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {/* Email */}
                 <motion.a 
                   href="mailto:info@royalgroupofrealestates.com" 
                   whileHover={{ x: 8, scale: 1.02 }}
                   className="block group"
                 >
-                  <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
-                        <Mail className="w-5 h-5 text-white" />
+                  <div className="bg-white/5 backdrop-blur-sm p-3 sm:p-4 rounded-lg sm:rounded-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                    <div className="flex items-center space-x-3 sm:space-x-4">
+                      <div className="p-2 sm:p-3 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
+                        <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-white" />
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-white font-semibold text-sm group-hover:text-gold-300 transition-colors duration-300">
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-white font-semibold text-xs sm:text-sm group-hover:text-gold-300 transition-colors duration-300">
                           Email Us
                         </h4>
-                        <p className="text-royal-100/70 text-xs group-hover:text-royal-100 transition-colors duration-300">
+                        <p className="text-royal-100/70 text-xs group-hover:text-royal-100 transition-colors duration-300 truncate">
                           info@royalgroupofrealestates.com
                         </p>
                       </div>
-                      <ArrowRight className="w-4 h-4 text-gold-400 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                      <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 text-gold-400 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300 flex-shrink-0" />
                     </div>
                   </div>
                 </motion.a>
@@ -275,20 +275,20 @@ const Footer = () => {
                   whileHover={{ x: 8, scale: 1.02 }}
                   className="block group"
                 >
-                  <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
-                        <Phone className="w-5 h-5 text-white" />
+                  <div className="bg-white/5 backdrop-blur-sm p-3 sm:p-4 rounded-lg sm:rounded-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                    <div className="flex items-center space-x-3 sm:space-x-4">
+                      <div className="p-2 sm:p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
+                        <Phone className="w-4 sm:w-5 h-4 sm:h-5 text-white" />
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-white font-semibold text-sm group-hover:text-gold-300 transition-colors duration-300">
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-white font-semibold text-xs sm:text-sm group-hover:text-gold-300 transition-colors duration-300">
                           Call Us
                         </h4>
                         <p className="text-royal-100/70 text-xs group-hover:text-royal-100 transition-colors duration-300">
                           +91 700-606-4587
                         </p>
                       </div>
-                      <ArrowRight className="w-4 h-4 text-gold-400 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                      <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 text-gold-400 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300 flex-shrink-0" />
                     </div>
                   </div>
                 </motion.a>
@@ -298,13 +298,13 @@ const Footer = () => {
                   whileHover={{ x: 8, scale: 1.02 }}
                   className="block group"
                 >
-                  <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-gradient-to-r from-purple-400 to-purple-600 rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300 mt-1">
-                        <MapPin className="w-5 h-5 text-white" />
+                  <div className="bg-white/5 backdrop-blur-sm p-3 sm:p-4 rounded-lg sm:rounded-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                    <div className="flex items-start space-x-3 sm:space-x-4">
+                      <div className="p-2 sm:p-3 bg-gradient-to-r from-purple-400 to-purple-600 rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300 mt-1">
+                        <MapPin className="w-4 sm:w-5 h-4 sm:h-5 text-white" />
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-white font-semibold text-sm group-hover:text-gold-300 transition-colors duration-300">
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-white font-semibold text-xs sm:text-sm group-hover:text-gold-300 transition-colors duration-300">
                           Visit Us
                         </h4>
                         <p className="text-royal-100/70 text-xs group-hover:text-royal-100 transition-colors duration-300 leading-relaxed">
@@ -317,15 +317,15 @@ const Footer = () => {
               </div>
               
               {/* Bottom Decoration */}
-              <div className="mt-6 pt-4 border-t border-white/10">
+              <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <FaCrown className="w-4 h-4 text-gold-400" />
+                    <FaCrown className="w-3 sm:w-4 h-3 sm:h-4 text-gold-400" />
                     <span className="text-royal-100/60 text-xs">Est. 2012</span>
                   </div>
                   <div className="flex space-x-1">
                     {[...Array(3)].map((_, i) => (
-                      <div key={i} className="w-1 h-1 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
+                      <div key={i} className="w-0.5 sm:w-1 h-0.5 sm:h-1 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
                     ))}
                   </div>
                 </div>
@@ -334,22 +334,22 @@ const Footer = () => {
           </motion.div>
           
           {/* Quick Links */}
-          <motion.div variants={itemVariants} className="backdrop-blur-lg bg-white/5 p-8 rounded-2xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:bg-white/10 relative overflow-hidden">
+          <motion.div variants={itemVariants} className="backdrop-blur-lg bg-white/5 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:bg-white/10 relative overflow-hidden">
             {/* Floating Elements */}
-            <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full opacity-20 animate-pulse" />
-            <div className="absolute bottom-6 left-6 w-4 h-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.5s' }} />
-            <div className="absolute top-12 left-4 w-6 h-6 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full opacity-25 animate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="absolute top-3 sm:top-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full opacity-20 animate-pulse" />
+            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 w-3 sm:w-4 h-3 sm:h-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.5s' }} />
+            <div className="absolute top-10 sm:top-12 left-3 sm:left-4 w-4 sm:w-6 h-3 sm:h-4 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full opacity-25 animate-pulse" style={{ animationDelay: '1s' }} />
             
             <div className="relative z-10">
-              <h3 className="text-xl font-semibold mb-6 text-white relative inline-block">
+              <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-white relative inline-block">
                 <span className="flex items-center">
-                  <Zap className="w-6 h-6 mr-2 text-gold-400" />
+                  <Zap className="w-5 sm:w-6 h-5 sm:h-6 mr-2 text-gold-400" />
                   Quick Links
                 </span>
-                <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-gold-400 via-purple-400 to-blue-400"></div>
+                <div className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-gold-400 via-purple-400 to-blue-400"></div>
               </h3>
               
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {quickLinks.map((link, index) => (
                   <motion.a
                     key={index}
@@ -362,20 +362,20 @@ const Footer = () => {
                     transition={{ delay: index * 0.1 }}
                   >
                     <div className={cn(
-                      "relative p-4 rounded-xl border border-white/10 backdrop-blur-sm transition-all duration-300 group-hover:border-white/20",
+                      "relative p-3 sm:p-4 rounded-lg sm:rounded-xl border border-white/10 backdrop-blur-sm transition-all duration-300 group-hover:border-white/20",
                       "bg-gradient-to-r bg-white/5 group-hover:bg-white/10",
                       "transform group-hover:shadow-lg group-hover:shadow-gold-400/20"
                     )}>
                       {/* Background Gradient */}
                       <div className={cn(
-                        "absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-xl",
+                        "absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-lg sm:rounded-xl",
                         `bg-gradient-to-r ${link.bgGradient}`
                       )} />
                       
-                      <div className="relative z-10 flex items-center space-x-4">
+                      <div className="relative z-10 flex items-center space-x-3 sm:space-x-4">
                         {/* Icon Container */}
                         <div className={cn(
-                          "p-3 rounded-lg shadow-lg transition-all duration-300 group-hover:shadow-xl",
+                          "p-2 sm:p-3 rounded-lg shadow-lg transition-all duration-300 group-hover:shadow-xl",
                           "bg-gradient-to-r group-hover:scale-110 transform",
                           `bg-gradient-to-r ${link.gradient}`
                         )}>
@@ -386,38 +386,38 @@ const Footer = () => {
                         
                         {/* Content */}
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-white font-semibold text-sm group-hover:text-gold-300 transition-colors duration-300 flex items-center">
+                          <h4 className="text-white font-semibold text-xs sm:text-sm group-hover:text-gold-300 transition-colors duration-300 flex items-center">
                             {link.name}
-                            <ArrowRight className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                            <ArrowRight className="w-2.5 sm:w-3 h-2.5 sm:h-3 ml-1.5 sm:ml-2 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
                           </h4>
-                          <p className="text-royal-100/70 text-xs group-hover:text-royal-100 transition-colors duration-300 mt-1">
+                          <p className="text-royal-100/70 text-xs group-hover:text-royal-100 transition-colors duration-300 mt-0.5 sm:mt-1">
                             {link.description}
                           </p>
                         </div>
                         
                         {/* Hover Indicator */}
                         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="w-2 h-2 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full animate-pulse" />
+                          <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full animate-pulse" />
                         </div>
                       </div>
                       
                       {/* Hover Glow Effect */}
-                      <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-gradient-to-r from-gold-400/20 to-transparent" />
+                      <div className="absolute inset-0 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-gradient-to-r from-gold-400/20 to-transparent" />
                     </div>
                   </motion.a>
                 ))}
               </div>
               
               {/* Bottom Decoration */}
-              <div className="mt-6 pt-4 border-t border-white/10">
+              <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <Star className="w-4 h-4 text-gold-400" />
+                    <Star className="w-3 sm:w-4 h-3 sm:h-4 text-gold-400" />
                     <span className="text-royal-100/60 text-xs">Premium Navigation</span>
                   </div>
                   <div className="flex space-x-1">
                     {[...Array(3)].map((_, i) => (
-                      <div key={i} className="w-1 h-1 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
+                      <div key={i} className="w-0.5 sm:w-1 h-0.5 sm:h-1 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
                     ))}
                   </div>
                 </div>
@@ -426,22 +426,22 @@ const Footer = () => {
           </motion.div>
           
           {/* Our Services */}
-          <motion.div variants={itemVariants} className="backdrop-blur-lg bg-white/5 p-8 rounded-2xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:bg-white/10 relative overflow-hidden">
+          <motion.div variants={itemVariants} className="backdrop-blur-lg bg-white/5 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:bg-white/10 relative overflow-hidden">
             {/* Floating Elements */}
-            <div className="absolute top-6 right-6 w-6 h-6 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full opacity-20 animate-pulse" />
-            <div className="absolute bottom-8 left-8 w-5 h-5 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.7s' }} />
-            <div className="absolute top-16 left-6 w-4 h-4 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full opacity-25 animate-pulse" style={{ animationDelay: '1.2s' }} />
+            <div className="absolute top-4 sm:top-6 right-4 sm:right-6 w-4 sm:w-6 h-4 sm:h-6 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full opacity-20 animate-pulse" />
+            <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 w-3 sm:w-5 h-3 sm:h-5 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.7s' }} />
+            <div className="absolute top-12 sm:top-16 left-4 sm:left-6 w-3 sm:w-4 h-3 sm:h-4 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full opacity-25 animate-pulse" style={{ animationDelay: '1.2s' }} />
             
             <div className="relative z-10">
-              <h3 className="text-xl font-semibold mb-6 text-white relative inline-block">
+              <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-white relative inline-block">
                 <span className="flex items-center">
-                  <FaRocket className="w-6 h-6 mr-2 text-gold-400" />
+                  <FaRocket className="w-5 sm:w-6 h-5 sm:h-6 mr-2 text-gold-400" />
                   Our Services
                 </span>
-                <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-gold-400 via-emerald-400 to-blue-400"></div>
+                <div className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-gold-400 via-emerald-400 to-blue-400"></div>
               </h3>
               
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {services.map((service, index) => (
                   <motion.a
                     key={index}
@@ -454,20 +454,20 @@ const Footer = () => {
                     transition={{ delay: index * 0.1 }}
                   >
                     <div className={cn(
-                      "relative p-4 rounded-xl border border-white/10 backdrop-blur-sm transition-all duration-300 group-hover:border-white/20",
+                      "relative p-3 sm:p-4 rounded-lg sm:rounded-xl border border-white/10 backdrop-blur-sm transition-all duration-300 group-hover:border-white/20",
                       "bg-gradient-to-r bg-white/5 group-hover:bg-white/10",
                       "transform group-hover:shadow-lg group-hover:shadow-gold-400/20"
                     )}>
                       {/* Background Gradient */}
                       <div className={cn(
-                        "absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-xl",
+                        "absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-lg sm:rounded-xl",
                         `bg-gradient-to-r ${service.bgGradient}`
                       )} />
                       
-                      <div className="relative z-10 flex items-center space-x-4">
+                      <div className="relative z-10 flex items-center space-x-3 sm:space-x-4">
                         {/* Icon Container */}
                         <div className={cn(
-                          "p-3 rounded-lg shadow-lg transition-all duration-300 group-hover:shadow-xl",
+                          "p-2 sm:p-3 rounded-lg shadow-lg transition-all duration-300 group-hover:shadow-xl",
                           "bg-gradient-to-r group-hover:scale-110 transform",
                           `bg-gradient-to-r ${service.gradient}`
                         )}>
@@ -478,38 +478,38 @@ const Footer = () => {
                         
                         {/* Content */}
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-white font-semibold text-sm group-hover:text-gold-300 transition-colors duration-300 flex items-center">
+                          <h4 className="text-white font-semibold text-xs sm:text-sm group-hover:text-gold-300 transition-colors duration-300 flex items-center">
                             {service.name}
-                            <ArrowRight className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                            <ArrowRight className="w-2.5 sm:w-3 h-2.5 sm:h-3 ml-1.5 sm:ml-2 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
                           </h4>
-                          <p className="text-royal-100/70 text-xs group-hover:text-royal-100 transition-colors duration-300 mt-1">
+                          <p className="text-royal-100/70 text-xs group-hover:text-royal-100 transition-colors duration-300 mt-0.5 sm:mt-1">
                             {service.description}
                           </p>
                         </div>
                         
                         {/* Hover Indicator */}
                         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="w-2 h-2 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full animate-pulse" />
+                          <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full animate-pulse" />
                         </div>
                       </div>
                       
                       {/* Hover Glow Effect */}
-                      <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-gradient-to-r from-gold-400/20 to-transparent" />
+                      <div className="absolute inset-0 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-gradient-to-r from-gold-400/20 to-transparent" />
                     </div>
                   </motion.a>
                 ))}
               </div>
               
               {/* Bottom Decoration */}
-              <div className="mt-6 pt-4 border-t border-white/10">
+              <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <FaShieldAlt className="w-4 h-4 text-gold-400" />
+                    <FaShieldAlt className="w-3 sm:w-4 h-3 sm:h-4 text-gold-400" />
                     <span className="text-royal-100/60 text-xs">Professional Services</span>
                   </div>
                   <div className="flex space-x-1">
                     {[...Array(3)].map((_, i) => (
-                      <div key={i} className="w-1 h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.3}s` }} />
+                      <div key={i} className="w-0.5 sm:w-1 h-0.5 sm:h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.3}s` }} />
                     ))}
                   </div>
                 </div>
@@ -518,22 +518,22 @@ const Footer = () => {
           </motion.div>
           
           {/* Cities */}
-          <motion.div variants={itemVariants} className="backdrop-blur-lg bg-white/5 p-8 rounded-2xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:bg-white/10 relative overflow-hidden">
+          <motion.div variants={itemVariants} className="backdrop-blur-lg bg-white/5 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:bg-white/10 relative overflow-hidden">
             {/* Floating Elements */}
-            <div className="absolute top-6 right-6 w-6 h-6 bg-gradient-to-r from-teal-400 to-teal-600 rounded-full opacity-20 animate-pulse" />
-            <div className="absolute bottom-8 left-8 w-5 h-5 bg-gradient-to-r from-indigo-400 to-indigo-600 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.4s' }} />
-            <div className="absolute top-16 left-6 w-4 h-4 bg-gradient-to-r from-pink-400 to-pink-600 rounded-full opacity-25 animate-pulse" style={{ animationDelay: '0.9s' }} />
+            <div className="absolute top-4 sm:top-6 right-4 sm:right-6 w-4 sm:w-6 h-4 sm:h-6 bg-gradient-to-r from-teal-400 to-teal-600 rounded-full opacity-20 animate-pulse" />
+            <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 w-3 sm:w-5 h-3 sm:h-5 bg-gradient-to-r from-indigo-400 to-indigo-600 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.4s' }} />
+            <div className="absolute top-12 sm:top-16 left-4 sm:left-6 w-3 sm:w-4 h-3 sm:h-4 bg-gradient-to-r from-pink-400 to-pink-600 rounded-full opacity-25 animate-pulse" style={{ animationDelay: '0.9s' }} />
             
             <div className="relative z-10">
-              <h3 className="text-xl font-semibold mb-6 text-white relative inline-block">
+              <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-white relative inline-block">
                 <span className="flex items-center">
-                  <FaCity className="w-6 h-6 mr-2 text-gold-400" />
+                  <FaCity className="w-5 sm:w-6 h-5 sm:h-6 mr-2 text-gold-400" />
                   Our Cities
                 </span>
-                <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-gold-400 via-teal-400 to-indigo-400"></div>
+                <div className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-gold-400 via-teal-400 to-indigo-400"></div>
               </h3>
               
-              <div className="space-y-3 mb-6">
+              <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                 {cities.map((city, index) => (
                   <motion.a
                     key={index}
@@ -545,20 +545,20 @@ const Footer = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
-                      <div className="flex items-center space-x-3">
-                        <div className={`p-2 rounded-lg bg-gradient-to-r ${city.color} shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                    <div className="bg-white/5 backdrop-blur-sm p-3 sm:p-4 rounded-lg sm:rounded-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
+                      <div className="flex items-center space-x-2 sm:space-x-3">
+                        <div className={`p-1.5 sm:p-2 rounded-lg bg-gradient-to-r ${city.color} shadow-lg group-hover:shadow-xl transition-all duration-300`}>
                           {city.icon}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-white font-semibold text-sm group-hover:text-gold-300 transition-colors duration-300">
+                          <h4 className="text-white font-semibold text-xs sm:text-sm group-hover:text-gold-300 transition-colors duration-300">
                             {city.name}
                           </h4>
                           <p className="text-royal-100/70 text-xs group-hover:text-royal-100 transition-colors duration-300">
                             {city.description}
                           </p>
                         </div>
-                        <ChevronRight className="w-4 h-4 text-gold-400 group-hover:text-gold-300 transition-colors duration-300 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                        <ChevronRight className="w-3 sm:w-4 h-3 sm:h-4 text-gold-400 group-hover:text-gold-300 transition-colors duration-300 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300 flex-shrink-0" />
                       </div>
                     </div>
                   </motion.a>
@@ -566,12 +566,12 @@ const Footer = () => {
               </div>
               
               {/* Social Media Section */}
-              <div className="pt-6 border-t border-white/10">
-                <h4 className="text-lg font-semibold mb-4 text-white flex items-center">
-                  <FaFacebookF className="w-5 h-5 mr-2 text-gold-400" />
+              <div className="pt-4 sm:pt-6 border-t border-white/10">
+                <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white flex items-center">
+                  <FaFacebookF className="w-4 sm:w-5 h-4 sm:h-5 mr-2 text-gold-400" />
                   Follow Us
                 </h4>
-                <div className="flex flex-wrap gap-3 mb-4">
+                <div className="flex flex-wrap gap-2 sm:gap-3 mb-3 sm:mb-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={index}
@@ -579,7 +579,7 @@ const Footer = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1, y: -2 }}
-                      className="p-3 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 rounded-xl transition-all duration-300 group"
+                      className="p-2 sm:p-3 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 rounded-lg sm:rounded-xl transition-all duration-300 group"
                     >
                       <div className="text-white group-hover:text-gold-300 transition-colors duration-300">
                         {social.icon}
@@ -592,23 +592,23 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
-                  className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-2 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-sm"
                 >
-                  <FaFacebookF size={18} />
-                  <span className="font-medium text-sm">Follow on Facebook</span>
+                  <FaFacebookF size={16} className="sm:w-[18px] sm:h-[18px]" />
+                  <span className="font-medium text-xs sm:text-sm">Follow on Facebook</span>
                 </motion.a>
               </div>
               
               {/* Bottom Decoration */}
-              <div className="mt-6 pt-4 border-t border-white/10">
+              <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <FaMountain className="w-4 h-4 text-gold-400" />
+                    <FaMountain className="w-3 sm:w-4 h-3 sm:h-4 text-gold-400" />
                     <span className="text-royal-100/60 text-xs">Across India</span>
                   </div>
                   <div className="flex space-x-1">
                     {[...Array(3)].map((_, i) => (
-                      <div key={i} className="w-1 h-1 bg-gradient-to-r from-teal-400 to-teal-600 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
+                      <div key={i} className="w-0.5 sm:w-1 h-0.5 sm:h-1 bg-gradient-to-r from-teal-400 to-teal-600 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
                     ))}
                   </div>
                 </div>
@@ -622,19 +622,19 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 pt-8 border-t border-white/10"
+          className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10"
         >
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+          <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
             {/* Company Copyright */}
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-3 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full border border-white/10 hover:bg-white/10 transition-all duration-300"
+              className="flex items-center space-x-2 sm:space-x-3 bg-white/5 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-white/10 hover:bg-white/10 transition-all duration-300"
             >
-              <div className="p-2 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full shadow-lg">
-                <FaCrown size={16} className="text-white" />
+              <div className="p-1.5 sm:p-2 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full shadow-lg">
+                <FaCrown size={14} className="sm:w-4 sm:h-4 text-white" />
               </div>
-              <div className="text-center md:text-left">
-                <p className="text-white font-medium text-sm">
+              <div className="text-center sm:text-left">
+                <p className="text-white font-medium text-xs sm:text-sm">
                   © {currentYear} Royal Group of Real Estates
                 </p>
                 <p className="text-royal-100/70 text-xs">
@@ -646,14 +646,14 @@ const Footer = () => {
             {/* Developer Credit */}
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-3 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full border border-white/10 hover:bg-white/10 transition-all duration-300"
+              className="flex items-center space-x-2 sm:space-x-3 bg-white/5 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-white/10 hover:bg-white/10 transition-all duration-300"
             >
-              <div className="p-2 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full shadow-lg">
-                <FaCode size={16} className="text-white" />
+              <div className="p-1.5 sm:p-2 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full shadow-lg">
+                <FaCode size={14} className="sm:w-4 sm:h-4 text-white" />
               </div>
-              <div className="text-center md:text-left">
-                <p className="text-white font-medium text-sm">
-                  Developed with <FaHeart size={12} className="inline text-red-400 mx-1" /> by
+              <div className="text-center sm:text-left">
+                <p className="text-white font-medium text-xs sm:text-sm">
+                  Developed with <FaHeart size={10} className="inline text-red-400 mx-1 sm:w-3 sm:h-3" /> by
                 </p>
                 <p className="text-royal-100/70 text-xs">
                   Mussadiq Wani Inc.
@@ -667,10 +667,10 @@ const Footer = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-6 text-center"
+            className="mt-4 sm:mt-6 text-center"
           >
-            <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full border border-white/10">
+              <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
               <span className="text-royal-100/60 text-xs">
                 Premium Real Estate Solutions Across India
               </span>
