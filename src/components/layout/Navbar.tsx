@@ -88,18 +88,22 @@ const Navbar = () => {
         </Link>
         
         <nav className={`hidden lg:flex space-x-8 ${isScrolled ? 'text-royal-800 dark:text-white' : 'text-white'}`}>
-          <Link 
-            to="/" 
+          <a 
+            href="/" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative font-medium hover:text-gold-500 transition-all duration-300 hover:-translate-y-0.5"
           >
             Home
-          </Link>
-          <Link 
-            to="/properties" 
+          </a>
+          <a 
+            href="/properties" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative font-medium hover:text-gold-500 transition-all duration-300 hover:-translate-y-0.5"
           >
             Properties
-          </Link>
+          </a>
           <div className="relative group">
             <button 
               onClick={toggleDropdown}
@@ -110,30 +114,38 @@ const Navbar = () => {
             </button>
             {isDropdownOpen && !isMobileMenuOpen && (
               <div className="absolute top-full left-0 mt-2 w-48 bg-white/95 dark:bg-royal-900/95 backdrop-blur-sm rounded-lg shadow-xl py-2 z-[1000] animate-in fade-in-0 zoom-in-95 duration-200">
-                <Link 
-                  to="/services/buying" 
+                <a 
+                  href="/services/buying" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block px-4 py-2 text-royal-800 dark:text-white hover:bg-gold-50 dark:hover:bg-royal-800/50 hover:text-gold-500 transition-colors duration-300"
                 >
                   Buying Property
-                </Link>
-                <Link 
-                  to="/services/selling" 
+                </a>
+                <a 
+                  href="/services/selling" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block px-4 py-2 text-royal-800 dark:text-white hover:bg-gold-50 dark:hover:bg-royal-800/50 hover:text-gold-500 transition-colors duration-300"
                 >
                   Selling Property
-                </Link>
-                <Link 
-                  to="/services/renting" 
+                </a>
+                <a 
+                  href="/services/renting" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block px-4 py-2 text-royal-800 dark:text-white hover:bg-gold-50 dark:hover:bg-royal-800/50 hover:text-gold-500 transition-colors duration-300"
                 >
                   Renting Property
-                </Link>
-                <Link 
-                  to="/services/investment" 
+                </a>
+                <a 
+                  href="/services/investment" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block px-4 py-2 text-royal-800 dark:text-white hover:bg-gold-50 dark:hover:bg-royal-800/50 hover:text-gold-500 transition-colors duration-300"
                 >
                   Investment Advisory
-                </Link>
+                </a>
               </div>
             )}
           </div>
@@ -166,26 +178,32 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <Link 
-            to="/about" 
+          <a 
+            href="/about" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative font-medium hover:text-gold-500 transition-all duration-300 hover:-translate-y-0.5"
           >
             About Us
-          </Link>
-          <Link 
-            to="/contact" 
+          </a>
+          <a 
+            href="/contact" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative font-medium hover:text-gold-500 transition-all duration-300 hover:-translate-y-0.5"
           >
             Contact
-          </Link>
+          </a>
           
           {isAuthenticated && isAdmin && (
-            <Link 
-              to="/admin" 
+            <a 
+              href="/admin" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative font-medium hover:text-gold-500 transition-all duration-300 hover:-translate-y-0.5"
             >
               Admin
-            </Link>
+            </a>
           )}
         </nav>
         
@@ -203,7 +221,7 @@ const Navbar = () => {
           
           <ThemeToggle iconOnly className="hidden md:block transition-transform hover:scale-110" />
           
-          <Link to="/auth">
+          <a href="/auth" target="_blank" rel="noopener noreferrer">
             <CustomButton 
               variant={isScrolled ? "primary" : "outline"} 
               size="sm"
@@ -214,7 +232,7 @@ const Navbar = () => {
             >
               {isAuthenticated ? 'Dashboard' : 'Sign In'}
             </CustomButton>
-          </Link>
+          </a>
           
           {/* HAMBURGER MENU BUTTON */}
           <button 
@@ -299,9 +317,11 @@ const Navbar = () => {
                 {menuItems.map((item) => {
                   const Icon = item.icon;
                   return (
-                    <Link
+                    <a
                       key={item.name}
-                      to={item.path}
+                      href={item.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center space-x-3 px-3 py-3 rounded-xl text-royal-700 dark:text-royal-100 hover:bg-gold-50 dark:hover:bg-royal-800/50 hover:text-gold-600 dark:hover:text-gold-400 transition-all duration-300"
                       onClick={closeMobileMenu}
                     >
@@ -309,7 +329,7 @@ const Navbar = () => {
                         <Icon size={18} className="text-white" />
                       </div>
                       <span className="font-medium">{item.name}</span>
-                    </Link>
+                    </a>
                   );
                 })}
               </div>
@@ -320,9 +340,11 @@ const Navbar = () => {
                   Services
                 </h3>
                 {serviceItems.map((item) => (
-                  <Link
+                  <a
                     key={item.name}
-                    to={item.path}
+                    href={item.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center space-x-3 px-3 py-3 rounded-xl text-royal-700 dark:text-royal-100 hover:bg-gold-50 dark:hover:bg-royal-800/50 hover:text-gold-600 dark:hover:text-gold-400 transition-all duration-300"
                     onClick={closeMobileMenu}
                   >
@@ -330,7 +352,7 @@ const Navbar = () => {
                       <Briefcase size={18} className="text-white" />
                     </div>
                     <span className="font-medium text-sm">{item.name}</span>
-                  </Link>
+                  </a>
                 ))}
               </div>
 
@@ -362,8 +384,10 @@ const Navbar = () => {
                   <h3 className="text-xs font-semibold text-royal-500 dark:text-royal-300 uppercase tracking-wider px-3 py-2">
                     Admin
                   </h3>
-                  <Link
-                    to="/admin"
+                  <a
+                    href="/admin"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center space-x-3 px-3 py-3 rounded-xl text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all duration-300"
                     onClick={closeMobileMenu}
                   >
@@ -371,21 +395,21 @@ const Navbar = () => {
                       <Settings size={18} className="text-white" />
                     </div>
                     <span className="font-medium text-sm">Admin Panel</span>
-                  </Link>
+                  </a>
                 </div>
               )}
             </div>
 
             {/* Footer Actions */}
             <div className="p-4 border-t border-white/10 dark:border-royal-700/30 space-y-3">
-              <Link to="/auth" onClick={closeMobileMenu}>
+              <a href="/auth" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
                 <CustomButton 
                   variant="primary" 
                   className="w-full bg-gradient-to-r from-gold-400 to-gold-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   {isAuthenticated ? 'Go to Dashboard' : 'Sign In / Register'}
                 </CustomButton>
-              </Link>
+              </a>
               
               <a 
                 href="tel:7006064587" 
