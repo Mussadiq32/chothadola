@@ -18,7 +18,7 @@ const Footer = () => {
     },
     { 
       name: 'About Us', 
-      link: '#about', 
+      link: '/about', 
       icon: <Users size={18} />,
       description: 'Our story & mission',
       gradient: 'from-purple-400 to-purple-600',
@@ -26,7 +26,7 @@ const Footer = () => {
     },
     { 
       name: 'Properties', 
-      link: '#featured', 
+      link: '/properties', 
       icon: <Building2 size={18} />,
       description: 'Browse listings',
       gradient: 'from-green-400 to-green-600',
@@ -34,7 +34,7 @@ const Footer = () => {
     },
     { 
       name: 'Services', 
-      link: '#services', 
+      link: '/services', 
       icon: <Wrench size={18} />,
       description: 'What we offer',
       gradient: 'from-orange-400 to-orange-600',
@@ -42,7 +42,7 @@ const Footer = () => {
     },
     { 
       name: 'Contact', 
-      link: '#contact', 
+      link: '/contact', 
       icon: <MessageCircle size={18} />,
       description: 'Get in touch',
       gradient: 'from-red-400 to-red-600',
@@ -208,6 +208,8 @@ const Footer = () => {
               {/* Enhanced Logo */}
               <motion.a 
                 href="/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center group mb-4 sm:mb-6"
                 whileHover={{ scale: 1.05 }}
               >
@@ -354,6 +356,8 @@ const Footer = () => {
                   <motion.a
                     key={index}
                     href={link.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ x: 8, scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="block group relative overflow-hidden"
@@ -446,6 +450,8 @@ const Footer = () => {
                   <motion.a
                     key={index}
                     href={service.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ x: 8, scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="block group relative overflow-hidden"
@@ -538,6 +544,8 @@ const Footer = () => {
                   <motion.a
                     key={index}
                     href={city.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ x: 8, scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="block group relative overflow-hidden"
